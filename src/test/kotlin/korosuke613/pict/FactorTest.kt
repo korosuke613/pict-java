@@ -8,6 +8,7 @@ internal class FactorTest {
     @Test
     fun createTest(){
         val factor = Factor(3)
+        factor.name
     }
 
     @Test
