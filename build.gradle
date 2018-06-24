@@ -28,7 +28,9 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compile group: 'net.java.dev.jna', name: 'jna', version: '4.5.1'
     testCompile 'org.junit.jupiter:junit-jupiter-api:5.1.0'
-    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.1.0'}
+    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
+    compile fileTree(dir: 'libs', include: '*.jar')
+}
 
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
@@ -68,10 +70,7 @@ task junitPlatformJacocoReport(type: JacocoReport) {
     }
     afterEvaluate {
         classDirectories = files(classDirectories.files.collect {
-            fileTree(dir: it, exclude: [
-                    '**/external/**',
-                    '**/workspace/**'
-            ])
+            fileTree(dir: it, exclude:'**/*LibPict*')
         })
     }
 }
