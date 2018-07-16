@@ -1,4 +1,4 @@
-package korosuke613.pict;
+package io.github.pict;
 
 import com.sun.jna.Library;
 import com.sun.jna.Native;

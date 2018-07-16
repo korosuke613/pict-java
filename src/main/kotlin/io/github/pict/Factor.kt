@@ -1,4 +1,4 @@
-package korosuke613.pict
+package io.github.pict
 
 import java.util.*
 
