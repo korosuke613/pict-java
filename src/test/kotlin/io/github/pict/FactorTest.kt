@@ -26,4 +26,10 @@ internal class FactorTest {
 
         assertEquals("The number of factors and the number of weights are different.", exception.message)
     }
+
+    @Test
+    fun namedLevelTest() {
+        val namedLevel: ArrayList<Long> = arrayListOf(-121212, 0, 3233252)
+        val factor = Factor(named_level = namedLevel.map { it.toString() }, name = "その1")
+    }
 }

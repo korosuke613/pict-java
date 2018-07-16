@@ -5,6 +5,7 @@ import com.sun.jna.Pointer
 
 class Pict {
     private lateinit var task: Pointer
+    private lateinit var model: Model
 
     init {
         createTask()
@@ -14,11 +15,12 @@ class Pict {
         task = p.PictCreateTask()
     }
 
-    fun setRootModel(model: Model){
-        p.PictSetRootModel(task, model.model)
+    fun setRootModel(model_: Model) {
+        model = model_
+        p.PictSetRootModel(task, model_.model)
     }
 
-    fun generate(): List<IntArray> {
+    fun generate(): List<Array<String?>> {
         p.PictGenerate(task)
 
         val resultRef = p.PictAllocateResultBuffer(task)
@@ -27,13 +29,18 @@ class Pict {
 
         var count = 0
 
-        val mutableTestData = mutableListOf<IntArray>()
+        val mutableTestData = mutableListOf<Array<String?>>()
         while (p.PictGetNextResultRow(task, resultRef) > 0) {
             val rowRef = resultRef.pointer
             val row = rowRef.getLongArray(0, paramCount)
-            val t = IntArray(paramCount)
+            val t: Array<String?> = arrayOfNulls(paramCount)
             for (index in 0 until paramCount) {
-                t[index] = row[index].toInt()
+                if (model.isNamedLevelFactor(index)) {
+                    val name = model.getNamedLevelFactor(index)
+                    t[index] = name[row[index].toInt()]
+                } else {
+                    t[index] = row[index].toString()
+                }
             }
             mutableTestData.add(t)
             count++
