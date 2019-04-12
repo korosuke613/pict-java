@@ -44,6 +44,9 @@ jacoco {
     applyTo junitPlatformTest
 }
 
+jar {
+    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+}
 
 jacocoTestReport {
     afterEvaluate {

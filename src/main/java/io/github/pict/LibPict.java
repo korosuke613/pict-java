@@ -1,12 +1,10 @@
 package io.github.pict;
 
-import com.sun.jna.Library;
-import com.sun.jna.Native;
-import com.sun.jna.Pointer;
-import com.sun.jna.Structure;
+import com.sun.jna.*;
 import com.sun.jna.ptr.IntByReference;
 import java.util.Arrays;
 import java.util.List;
+import java.lang.System;
 
 public class LibPict {
     interface PictLib extends Library {
