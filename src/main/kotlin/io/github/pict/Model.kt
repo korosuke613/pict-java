@@ -1,4 +1,4 @@
-package io.github.pict
+package com.github.korosuke613.pict4java
 
 class Model{
     private val p = LibPict.PictLib.INSTANCE
