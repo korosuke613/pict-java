@@ -1,4 +1,4 @@
-package com.github.korosuke613.pict4java
+package korosuke613.pict4java
 
 import korosuke613.pict4java.LibPict
 
