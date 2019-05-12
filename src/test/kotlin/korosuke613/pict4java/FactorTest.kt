@@ -1,5 +1,7 @@
-package com.github.korosuke613.pict4java
+package korosuke613.pict4java
 
+import com.github.korosuke613.pict4java.Factor
+import com.github.korosuke613.pict4java.FactorWeightsException
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 

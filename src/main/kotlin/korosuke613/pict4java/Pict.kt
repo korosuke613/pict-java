@@ -1,6 +1,7 @@
 package com.github.korosuke613.pict4java
 
 import com.sun.jna.Pointer
+import korosuke613.pict4java.LibPict
 
 
 class Pict {

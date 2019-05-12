@@ -1,5 +1,7 @@
 package com.github.korosuke613.pict4java
 
+import korosuke613.pict4java.LibPict
+
 class Model{
     private val p = LibPict.PictLib.INSTANCE
     var model = p.PictCreateModel()!!
