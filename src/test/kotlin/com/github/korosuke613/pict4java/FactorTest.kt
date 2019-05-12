@@ -1,4 +1,4 @@
-package io.github.pict
+package com.github.korosuke613.pict4java
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
