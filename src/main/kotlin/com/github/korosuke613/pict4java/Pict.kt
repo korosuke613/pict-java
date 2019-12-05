@@ -54,4 +54,3 @@ class Pict {
         internal var p = LibPict.PictLib.INSTANCE
     }
 }
-
