@@ -13,7 +13,7 @@ import java.lang.System;
 public class LibPict {
     // loadLibraryの第一引数はあとで作成するlib***.soの***と一致させる
     interface PictLib extends Library {
-        PictLib INSTANCE = (PictLib) Native.load(Platform.isMac() ? "pict": "aaaa", PictLib.class);
+        PictLib INSTANCE = (PictLib) Native.load(Platform.isWindows() ? "pict": "pict", PictLib.class);
 
         // Cの関数名と一致させる
         Pointer PictCreateTask();
