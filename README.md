@@ -1,7 +1,7 @@
 # pict4java
 Use the library PICT(created by Microsoft) from Java.
 
-[![](https://img.shields.io/badge/GitHub%20Package%20Registry-enable-brightgreen.svg?style=flat-square&logo=github)](https://github.com/korosuke613/pict4java/packages/69597)
+[![](https://img.shields.io/badge/GitHub%20Package%20Registry-enable-brightgreen.svg?logo=github)](https://github.com/korosuke613/pict4java/packages/69597) [![codecov](https://codecov.io/gh/korosuke613/pict4java/branch/master/graph/badge.svg)](https://codecov.io/gh/korosuke613/pict4java)
 
 
 ## Setup
