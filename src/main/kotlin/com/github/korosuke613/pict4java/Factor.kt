@@ -1,4 +1,4 @@
-package korosuke613.pict4java
+package com.github.korosuke613.pict4java
 
 import com.sun.jna.StringArray
 import java.util.*

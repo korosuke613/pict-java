@@ -1,15 +1,19 @@
-package korosuke613.pict4java;
+package com.github.korosuke613.pict4java;
 
 import com.sun.jna.*;
 import com.sun.jna.ptr.IntByReference;
+import org.scijava.nativelib.NativeLoader;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.lang.System;
 
 public class LibPict {
+    // loadLibraryの第一引数はあとで作成するlib***.soの***と一致させる
     interface PictLib extends Library {
-        // loadLibraryの第一引数はあとで作成するlib***.soの***と一致させる。
-        PictLib INSTANCE = (PictLib) Native.loadLibrary("pict", PictLib.class);
+        PictLib INSTANCE = (PictLib) Native.load(Platform.isMac() ? "pict": "aaaa", PictLib.class);
 
         // Cの関数名と一致させる
         Pointer PictCreateTask();
