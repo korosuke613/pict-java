@@ -14,10 +14,6 @@ Use the library [PICT:Pairwise Independent Combinatorial Tool](https://github.co
 #### for Gradle
 Add the following code to `build.gradle`.([Authenticating to GitHub Packages](https://help.github.com/en/github/managing-packages-with-github-packages/configuring-gradle-for-use-with-github-packages#authenticating-to-github-packages))
 ```gradle:build.gradle
-plugins {
-    id "net.linguica.maven-settings" version "0.5"
-}
-
 repositories {
     maven {
         name = "GitHubPackages"
