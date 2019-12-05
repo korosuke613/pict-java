@@ -1,8 +1,8 @@
 package korosuke613.pict4java
 
-import com.github.korosuke613.pict4java.Factor
-import com.github.korosuke613.pict4java.Model
-import com.github.korosuke613.pict4java.Pict
+import korosuke613.pict4java.Factor
+import korosuke613.pict4java.Model
+import korosuke613.pict4java.Pict
 import com.sun.jna.StringArray
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach

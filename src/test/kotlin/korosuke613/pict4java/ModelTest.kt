@@ -1,7 +1,7 @@
 package korosuke613.pict4java
 
-import com.github.korosuke613.pict4java.Factor
-import com.github.korosuke613.pict4java.Model
+import korosuke613.pict4java.Factor
+import korosuke613.pict4java.Model
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.BeforeEach
