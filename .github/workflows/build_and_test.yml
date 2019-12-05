@@ -13,5 +13,10 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: build pict
+      run: |
+        cd pict
+        make all
+        mv libpict.so ../src/main/resources
     - name: Build with Gradle
       run: ./gradlew build
