@@ -12,7 +12,15 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Gradle
-      run: ./gradlew build
+      run: |
+        ./gradlew customeTest
+    - uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }} #required
+        file: ./build/reports/coverage.xml #optional
+        flags: unittests #optional
+        #name: codecov-umbrella #optional
+        #yml: ./codecov.yml #optional
 
   publish:
     runs-on: ubuntu-latest
