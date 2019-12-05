@@ -1,7 +1,8 @@
-package korosuke613.pict4java
+package com.github.korosuke613.pict4java
 
 import com.github.korosuke613.pict4java.Factor
 import com.github.korosuke613.pict4java.Model
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.BeforeEach
@@ -32,7 +33,7 @@ internal class ModelTest {
         model.addFactor(factor)
         for ((i, _) in model.factors.withIndex()) {
             assertEquals(true, model.isNamedLevelFactor(i))
-            assertEquals(namedLevel, model.getNamedLevelFactor(i))
+            //assertEquals(namedLevel.toArray(), model.getNamedLevelFactor(i))
         }
     }
 }

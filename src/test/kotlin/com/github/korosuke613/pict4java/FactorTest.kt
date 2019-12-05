@@ -1,4 +1,4 @@
-package korosuke613.pict4java
+package com.github.korosuke613.pict4java
 
 import com.github.korosuke613.pict4java.Factor
 import com.github.korosuke613.pict4java.FactorWeightsException
