@@ -56,8 +56,8 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/korosuke613/pict4java")
             credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_PACKAGE_USERNAME")
-                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_PACKAGE_TOKEN")
+                username = System.getenv("GITHUB_PACKAGE_USERNAME")
+                password = System.getenv("GITHUB_PACKAGE_TOKEN")
             }
         }
     }

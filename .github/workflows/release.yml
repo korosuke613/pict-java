@@ -17,6 +17,7 @@ jobs:
         java-version: 1.8
     - name: Build with Gradle
       env:
+        GITHUB_PACKAGE_USERNAME: korosuke613
         GITHUB_PACKAGE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GRADLE_PUBLISH_VERSION: ${{ github.ref }}
       run: ./gradlew publish
