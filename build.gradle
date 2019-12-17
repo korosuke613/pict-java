@@ -5,7 +5,6 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -16,7 +15,6 @@ plugins {
     id "java"
     id "jacoco"
 }
-apply plugin: 'org.junit.platform.gradle.plugin'
 apply plugin: 'kotlin'
 
 group 'com.github.korosuke613'
@@ -46,32 +44,24 @@ compileKotlin {
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
+
+test {
+    useJUnitPlatform()
+}
+
 jacoco {
-    toolVersion = "0.8.0"
-    applyTo junitPlatformTest
+    toolVersion = "0.8.5"
+    reportsDir = file("$buildDir/customJacocoReportDir")
 }
 
 
 jacocoTestReport {
     reports {
-        xml.enabled = true
-        csv.enabled = false
-        html.enabled = false
+        xml.enabled true
+        csv.enabled false
+        html.enabled false
     }
 }
-
-task junitPlatformJacocoReport(type: JacocoReport) {
-    sourceSets sourceSets.main
-    executionData junitPlatformTest
-    reports {
-        xml.enabled = true
-        csv.enabled = false
-        html.enabled = false
-        xml.destination file("${buildDir}/reports/coverage.xml")
-    }
-}
-
-task customeTest(dependsOn: [junitPlatformTest, junitPlatformJacocoReport]){}
 
 publishing {
     repositories {
